@@ -18,8 +18,21 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${areaNegocioList}" />
-
+            
+            <table>
+                <thead>
+                    <g:sortableColumn property="area" title="Area" />
+                    <g:sortableColumn property="colaboradores" title="Colaboradores" />
+                </thead>
+                <tbody>
+                    <g:each in="${areaNegocioList}" var="areaNegocio">
+                        <tr>
+                            <td><g:link action="show" id="${areaNegocio.id}">${areaNegocio.area}</g:link></td>
+                            <td>${areaNegocio.colaboradores}</td>
+                        </tr>
+                    </g:each>    
+                </tbody>
+            </table>
             <div class="pagination">
                 <g:paginate total="${areaNegocioCount ?: 0}" />
             </div>
