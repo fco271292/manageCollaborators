@@ -31,7 +31,13 @@
                         <f:field property="nombre" label="Nombre"/>
                         <f:field property="apellidoPaterno" label="Apellido Paterno"/>
                         <f:field property="apellidoMaterno" label="Apellido Materno"/>
-                        <f:field property="areaNegocio" label="Área de Negocio"/>
+                        <f:field property="areaNegocio" label="Área de Negocio">
+                            <!--El nombre del select debe ser igual al nombre de la propiedad para que se pueda guardar-->
+                            <g:select  name='areaNegocio' value="${id}"
+                            noSelection="${['null':'']}"
+                            from='${com.fco271292.AreaNegocio.list()}'
+                            optionKey="id" optionValue="area"></g:select>
+                        </f:field>
                     </f:with>
                 </fieldset>
                 <fieldset class="buttons">
