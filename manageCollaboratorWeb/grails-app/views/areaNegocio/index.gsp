@@ -28,7 +28,14 @@
                     <g:each in="${areaNegocioList}" var="areaNegocio">
                         <tr>
                             <td><g:link action="show" id="${areaNegocio.id}">${areaNegocio.area}</g:link></td>
-                            <td>${areaNegocio.colaboradores}</td>
+                            <td>
+                                <g:each in="${areaNegocio.colaboradores}" var="colaboradores">
+                                    <g:link controller="colaborador" action="show" id="${colaboradores.id}">
+                                        ${colaboradores.nombre} ${colaboradores.apellidoPaterno} ${colaboradores.apellidoMaterno}
+                                        <br/>
+                                    </g:link>
+                                </g:each>
+                            </td>
                         </tr>
                     </g:each>    
                 </tbody>
