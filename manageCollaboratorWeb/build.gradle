@@ -10,6 +10,10 @@ buildscript {
     }
 }
 
+plugins {
+  id "com.craigburke.bower-installer" version "2.5.1"
+}
+
 version "0.1"
 group "managecollaboratorweb"
 
@@ -53,6 +57,7 @@ dependencies {
     testCompile "org.grails.plugins:geb"
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.29'
 }
 
 bootRun {
@@ -63,4 +68,17 @@ bootRun {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+bower {
+
+    installBase = "grails-app/assets/javascripts/bower"
+    
+    'jquery' ('2.2.4') {
+        source '/dist/jquery.min.js' 
+    }
+
+    'datatables.net-bs' ('1.10.15') {
+        source '**'
+    }
 }
