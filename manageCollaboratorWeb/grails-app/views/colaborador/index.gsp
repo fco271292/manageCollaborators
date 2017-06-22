@@ -18,11 +18,44 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${colaboradorList}" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                            <span class="input-group-addon">Buscar</span>
+                            <input type="text" name="searchText" id="searchText" placeholder="" class="form-control"/>
+                        </div>        
+                    </div>
+                </div>
 
-            <div class="pagination">
+                <table id="table">
+                    <thead>
+                        <g:sortableColumn property="nombre" title="Nombre" />
+                        <g:sortableColumn property="apellidoPaterno" title="Apellido Paterno" />
+                        <g:sortableColumn property="apellidoMaterno" title="Apellido Materno" />
+                        <g:sortableColumn property="areaNegocio" title="Area negocio" />
+                    </thead>
+                    <tbody>
+                        <g:each in="${colaboradorList}" var="colaborador">
+                            <tr>
+                                <td><g:link action="show" id="${colaborador.id}">${colaborador.nombre}</g:link></td>
+                                <td>${colaborador.apellidoPaterno}</td>
+                                <td>${colaborador.apellidoMaterno}</td>
+                                <td>${colaborador.areaNegocio.area}</td>
+                            </tr>
+                        </g:each>
+                    </tbody>
+                </table>
+
+            </div>
+            <!--<div class="pagination">
                 <g:paginate total="${colaboradorCount ?: 0}" />
             </div>
+            -->
         </div>
+
+        <asset:javascript src="/bower/datatables.net/jquery.dataTables.js" />
+        <asset:javascript src="/bower/datatables.net-bs/js/dataTables.bootstrap.min.js" />
+        <asset:javascript src="dataTable.js"/>
     </body>
 </html>
