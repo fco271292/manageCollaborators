@@ -22,7 +22,7 @@ jQuery(document).ready(function($) {
         "info": false,
         "searching": true,
         "lengthChange": false,
-        "dom":  "<'row'<'col-lg-12'tr>>" +
+        "dom":  "<'row'<'col-lg-12'Btr>>" +
                 "<'row'<'col-lg-4'i><'col-lg-8'p>>"
                 /*  Iniciales para mostrar elementos del plugin
                     t: Table
@@ -30,6 +30,9 @@ jQuery(document).ready(function($) {
                     i: Table information summary
                     p: Pagination control
                 */
+        ,buttons: [
+            'csv', 'excel', 'pdf'
+        ]
         
     });
 
