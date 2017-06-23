@@ -57,5 +57,13 @@
         <asset:javascript src="/bower/datatables.net/jquery.dataTables.js" />
         <asset:javascript src="/bower/datatables.net-bs/js/dataTables.bootstrap.min.js" />
         <asset:javascript src="dataTable.js"/>
+
+        <asset:javascript src="/bower/datatables.net-buttons/dataTables.buttons.js"/>
+        <asset:javascript src="/bower/datatables.net-buttons/buttons.html5.js"/>
+        <asset:stylesheet href="/bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css"/>
+        
+        <!--<asset:javascript src="/bower/jszip/dist/jszip.js"/>
+        <asset:javascript src="/bower/pdfmake/build/pdfmake.min.js"/>
+        -->
     </body>
 </html>
