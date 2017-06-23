@@ -43,7 +43,18 @@ jQuery(document).ready(function($) {
                 header: true,
                 title: `Colaboradores_${new Date().toJSON()}`
             },
-            'csv'
+            {
+                extend: 'csv',
+                text: 'Excel',
+                exportOptions: {
+                    modifier: {
+                        page: 'current'
+                    }
+                },
+                header: true,
+                title: `Colaboradores_${new Date().toJSON()}`
+            }
+            ,'excelHtml5'
         ]
         
     });
