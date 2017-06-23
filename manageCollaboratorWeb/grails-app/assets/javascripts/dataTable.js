@@ -31,7 +31,19 @@ jQuery(document).ready(function($) {
                     p: Pagination control
                 */
         ,buttons: [
-            'csv', 'excel', 'pdf'
+            //'csv', 'excel', 'pdf'
+            {
+                extend: 'pdfHtml5',
+                text: 'PDF',
+                exportOptions: {
+                    modifier: {
+                        page: 'current'
+                    }
+                },
+                header: true,
+                title: `Colaboradores_${new Date().toJSON()}`
+            },
+            'csv'
         ]
         
     });
